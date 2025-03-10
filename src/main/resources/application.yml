@@ -11,6 +11,10 @@ spring:
     url: jdbc:mysql://localhost:3306/yu_picture
     username: root
     password: 123456
+    # 开放更大的文件上传体积
+  servlet:
+    multipart:
+      max-file-size: 10MB
 mybatis-plus:
   configuration:
     # mybatis 环境配置

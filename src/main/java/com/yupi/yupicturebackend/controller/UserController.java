@@ -39,7 +39,6 @@ public class UserController {
      * @return 响应消息
      */
     @PostMapping("/register")
-    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<Long> userRegister(@RequestBody UserRegisterRequest userRegisterRequest) {
         ThrowUtils.throwIf(userRegisterRequest == null, ErrorCode.SYSTEM_ERROR);
         String userAccount = userRegisterRequest.getUserAccount();
@@ -79,7 +78,7 @@ public class UserController {
     * 用户注销
     * */
     @PostMapping("/logout")
-    public BaseResponse<Boolean> userLogin(HttpServletRequest request) {
+    public BaseResponse<Boolean> userLogout(HttpServletRequest request) {
         ThrowUtils.throwIf(request == null, ErrorCode.PARAMS_ERROR);
         boolean result = userService.userLogout(request);
         return ResultUtils.success(result);
