@@ -84,4 +84,6 @@ public interface UserService extends IService<User> {
      * @return QueryWrapper
      */
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
+
+    boolean isAdmin(User user);
 }
