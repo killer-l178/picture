@@ -59,4 +59,6 @@ public interface PictureService extends IService<Picture> {
      */
     void validPicture(Picture picture);
 
+
+
 }
